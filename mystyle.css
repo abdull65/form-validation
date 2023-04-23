@@ -1,0 +1,146 @@
+body {
+  background: #344a72;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+#container {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form-wrap {
+  background: white;
+  padding: 15px 25px;
+  color: #333;
+  border-radius: 10px;
+
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+  color: blue;
+  font-style: oblique;
+  font-stretch: unset;
+}
+
+.form-wrap p {
+  font-family: sans-serif;
+  color: gray;
+}
+
+.form-wrap .form_group {
+  margin-top: 15px;
+  position: relative;
+}
+
+label {
+  display: block;
+  color: #666;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: #333 1px solid;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+input:hover {
+  border: #333 2px solid;
+}
+
+input:focus {
+  outline: none;
+}
+
+.msg_icon_grp .fa {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 42px;
+}
+
+input[type='submit'] {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #32c832;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: blue;
+
+}
+
+.submit_msg {
+  text-align: left !important;
+}
+
+
+
+.bottom-text {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+.fa-times {
+  font-weight: 300;
+  color: red;
+}
+
+.fa-check {
+  font-weight: 300;
+  color: #32c832;
+}
+
+.valid {
+  background-color: #32c832;
+  color: #ffffff !important;
+  margin-top: 1rem;
+  padding-left: .5rem;
+  border-radius: 8px;
+}
+
+.invalid {
+  background-color: #f00;
+  color: #ffffff !important;
+  margin-top: 1rem;
+  padding-left: .5rem;
+  border-radius: 8px;
+}
+
+.invalid_border {
+  border-color: #f00 !important;
+}
+
+.valid_border {
+  border-color: #32c832 !important;
+}

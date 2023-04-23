@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="mystyle.css">
+    <title>form</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="form-wrap">
+            <h1>Sign Up</h1>
+            <p>it's free and only take a minutes</p>
+            <form autocomplete="off">
+                <p class="msg"></p>
+                <p class="submitmsg"></p>
+                <div class="form_group">
+                    <label for="full_name">FullName</label>
+                    <input type="text" name="FullName" id="fullname" autocomplete="off" required>
+                    <div class="msg_icon_grp">
+                        <i id="name_check" class="fa fa-check"></i>
+                        <i id="name_times" class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="email" autocomplete="off" required>
+                    <div class="msg_icon_grp">
+                        <i id="email_check" class="fa fa-check"></i>
+                        <i id="email_times" class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="password">password</label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <div class="msg_icon_grp">
+                        <i id="password_check" class="fa fa-check"></i>
+                        <i id="password_times" class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="password">confirm password</label>
+                    <input type="password" name="password" id="confirmpsd" autocomplete="off" required>
+                    <div class="msg_icon_grp">
+                        <i id="confirmpsd_check" class="fa fa-check"></i>
+                        <i id="confirmpsd_times" class="fa fa-times"></i>
+                    </div>
+                <input type="submit" id="btn" value="SignUp">
+
+
+
+                <p class="bottom-text">
+                    By clicking the sign up botton,you agree with our
+                    <a href="#">terms and conditions</a> and
+                    <a href="#">policy</a>
+                <p id="save_el">Already have and account?<a href="#">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <ul class="users">
+
+    </ul>
+
+    <footer id="footer">
+        <p>
+            &copy; 2022 - 2023 form vlidation
+        </p>
+    </footer>
+    <script src="form_validation.js"></script>
+</body>
+
+</html>
