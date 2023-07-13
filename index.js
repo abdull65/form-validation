@@ -97,7 +97,10 @@ function confirmpsdFunc() {
     confirmPsdEl.classList.remove("valid_border");
     confirmPsdTimesIconEl.style.display = "block";
     confirmPsdCheckIconEl.style.display = "none";
-  } else if (confirmPsdEl.value === passwordEl.value) {
+  } else if (
+    passwordPattern.test(confirmPsdEl.value) &&
+    confirmPsdEl.value === passwordEl.value
+  ) {
     confirmPsdEl.classList.add("valid_border");
     confirmPsdEl.classList.remove("invalid_border");
     confirmPsdCheckIconEl.style.display = "block";
