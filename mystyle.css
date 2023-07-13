@@ -99,8 +99,7 @@ input[type='submit'] {
 }
 
 #btn:hover {
-  background: blue;
-
+  background-color: #22a022;
 }
 
 #btn:active {
