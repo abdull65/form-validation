@@ -69,15 +69,13 @@ input {
   border-radius: 5px;
   font-size: 16px;
   letter-spacing: 1px;
-}
-
-input:hover {
-  border: #333 2px solid;
+  outline: none;
 }
 
 input:focus {
-  outline: none;
+  border: #d5d5d5 2px solid;
 }
+
 
 .msg_icon_grp .fa {
   display: none;
@@ -97,10 +95,16 @@ input[type='submit'] {
   border-radius: 5px;
   margin-top: 20px;
   cursor: pointer;
+  transition: background 300ms;
 }
 
-button:hover {
+#btn:hover {
   background: blue;
+
+}
+
+#btn:active {
+  transform: scale(1.01);
 
 }
 
