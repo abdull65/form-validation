@@ -49,6 +49,19 @@ label {
   font-weight: 600;
 }
 
+.password_label {
+  position: relative;
+}
+
+#checkbox {
+  cursor: pointer;
+}
+
+.checkbox_group {
+  display: inline-flex;
+  gap: .5rem;
+}
+
 input {
   width: 100%;
   padding: 10px;

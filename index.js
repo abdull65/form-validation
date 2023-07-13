@@ -6,12 +6,23 @@ const formEl = document.querySelector("form"),
   formBtnEl = document.getElementById("btn"),
   warningMsg = document.querySelector(".msg"),
   successMsg = document.querySelector(".submitmsg");
+const fullNamePattern = /^[A-Za-z]+(?: [A-Za-z]+){1,2}$/;
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const passwordPattern =
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-z])(?=.*[!@#$%^&*()_+~`\-={}[\]:";'<>?,./]).{8,}$/;
+let nameCheckIconEl,
+  nameTimesIconEl,
+  emailCheckIconEl,
+  emailTimesIconEl,
+  passwordCheckIconEl,
+  passwordTimesIconEl,
+  confirmPsdCheckIconEl,
+  confirmPsdTimesIconEl;
 // Retrieve form data from Local Storage
 let formData = JSON.parse(localStorage.getItem("formData")) || [];
 function fullNameFunc() {
-  const nameCheckIconEl = document.querySelector("#name_check");
-  const nameTimesIconEl = document.querySelector("#name_times");
-  const fullNamePattern = /^[A-Za-z]+(?: [A-Za-z]+){1,2}$/;
+  nameCheckIconEl = document.querySelector("#name_check");
+  nameTimesIconEl = document.querySelector("#name_times");
   if (fullNameEl.value === "") {
     fullNameEl.classList.add("invalid_border");
     fullNameEl.classList.remove("valid_border");
@@ -30,9 +41,8 @@ function fullNameFunc() {
   }
 }
 function emailFunc() {
-  const emailCheckIconEl = document.querySelector("#email_check");
-  const emailTimesIconEl = document.querySelector("#email_times");
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  emailCheckIconEl = document.querySelector("#email_check");
+  emailTimesIconEl = document.querySelector("#email_times");
   if (emailEl.value === "") {
     emailEl.classList.add("invalid_border");
     emailEl.classList.remove("valid_border");
@@ -51,10 +61,9 @@ function emailFunc() {
   }
 }
 function passwordFunc() {
-  const psdCheckIconEl = document.querySelector("#password_check");
-  const psdTimesIconEl = document.querySelector("#password_times");
-  const passwordPattern =
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-z])(?=.*[!@#$%^&*()_+~`\-={}[\]:";'<>?,./]).{8,}$/;
+  psdCheckIconEl = document.querySelector("#password_check");
+  psdTimesIconEl = document.querySelector("#password_times");
+
   if (passwordEl.value === "") {
     passwordEl.classList.add("invalid_border");
     passwordEl.classList.remove("valid_border");
@@ -72,9 +81,17 @@ function passwordFunc() {
     psdCheckIconEl.style.display = "none";
   }
 }
+const showPasswordEvent = document.querySelector("#show_password");
+showPasswordEvent.addEventListener("change", () => {
+  if (passwordEl.type === "password") {
+    passwordEl.type = "text";
+  } else {
+    passwordEl.type = "password";
+  }
+});
 function confirmpsdFunc() {
-  const confirmPsdCheckIconEl = document.querySelector("#confirmpsd_check");
-  const confirmPsdTimesIconEl = document.querySelector("#confirmpsd_times");
+  confirmPsdCheckIconEl = document.querySelector("#confirmpsd_check");
+  confirmPsdTimesIconEl = document.querySelector("#confirmpsd_times");
   if (confirmPsdEl.value === "") {
     confirmPsdEl.classList.add("invalid_border");
     confirmPsdEl.classList.remove("valid_border");
@@ -92,6 +109,15 @@ function confirmpsdFunc() {
     confirmPsdCheckIconEl.style.display = "none";
   }
 }
+const showPasswordEvent1 = document.querySelector("#show_password2");
+showPasswordEvent1.addEventListener("change", () => {
+  if (confirmPsdEl.type === "password") {
+    confirmPsdEl.type = "text";
+  } else {
+    confirmPsdEl.type = "password";
+  }
+});
+
 fullNameEl.addEventListener("input", fullNameFunc);
 emailEl.addEventListener("input", emailFunc);
 passwordEl.addEventListener("input", passwordFunc);
@@ -106,6 +132,18 @@ formBtnEl.addEventListener("click", (event) => {
     confirmPsdEl.value === ""
   ) {
     warningMsg.innerHTML = "please fill the required input fields!";
+    warningMsg.classList.add("invalid");
+    setTimeout(() => {
+      warningMsg.style.display = "none";
+    }, 3000);
+    warningMsg.style.display = "block";
+  } else if (
+    !fullNamePattern.test(fullNameEl.value) ||
+    !emailPattern.test(emailEl.value) ||
+    !passwordPattern.test(passwordEl.value) ||
+    confirmPsdEl.value !== passwordEl.value
+  ) {
+    warningMsg.innerHTML = "please fill the required input correctly!";
     warningMsg.classList.add("invalid");
     setTimeout(() => {
       warningMsg.style.display = "none";

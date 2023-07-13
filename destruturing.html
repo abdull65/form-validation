@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destructuring, rest and spread orepator</title>
+  </head>
+  <body>
+    <script>
+      // array destructuring, rest and spread operator
+      const books = ["book1", "book2", "book3", "book4", "book5"];
+      // destructuring
+      const [book1, book2, book3, book4, book5] = books;
+      console.log(book1, book2, book3, book4);
+      // rest operator
+      const restArr = ["restBook", ...books];
+      console.log(restArr);
+      // spread operator
+      const spreadArr = [...books, "spreadBook", ...books];
+      console.log(spreadArr);
+
+      // array destructuring, rest and spread operator
+      const bookObj = {
+        title: "the coder",
+        pages: 120,
+        author: "judge abu",
+        "published year": 2004,
+      };
+      // destructuring object
+      const desBook = ({ title, pages, author, publish } = bookObj);
+      console.log(desBook);
+      //  rest object
+      const resObj = { title, pages, ...bookObj };
+      console.log(resObj);
+      // spreading object
+      const sprObj = { ...bookObj, ...resObj, ...bookObj };
+      console.log(sprObj);
+      console.log();
+    </script>
+  </body>
+</html>
