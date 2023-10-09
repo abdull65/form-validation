@@ -53,8 +53,10 @@ label {
   position: relative;
 }
 
-#checkbox {
+input[type="checkbox"] {
   cursor: pointer;
+  border-radius: 20px;
+  background-color: red;
 }
 
 .checkbox_group {
@@ -129,12 +131,12 @@ footer a {
 
 .fa-times {
   font-weight: 300;
-  color: red;
+  stroke: red;
 }
 
 .fa-check {
   font-weight: 300;
-  color: #32c832;
+  stroke: #32c832;
 }
 
 .valid {
